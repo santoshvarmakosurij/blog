@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "Personal Blog",
+  "main": "server.js",
+  "author": {
+    "name": "Santosh Varma Kosuri J",
+    "email": "santoshvarma.private@gmail.com"
+  },
+  "engines": {
+    "node": "4.4.x",
+    "npm": "3.8.x"
+  },
+  "dependencies": {
+    "express": "4.13.x"
+  }
+}
