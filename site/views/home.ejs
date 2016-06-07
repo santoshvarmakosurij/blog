@@ -3,8 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Blog of <%= nickname %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="css/site.css" />
+	<script type="text/javascript" src="js/site.js"></script>
 </head>
 <body>
-	Welcome <%= nickname %>
+	<header class="cf">
+		<h1><%= nickname %></h1>
+		<nav class="cf">
+			<ul class="cf">
+				<li><a href="#"><i class="icn icn-link icn-home"></i>Home</a></li>
+				<li><a href="#"><i class="icn icn-link icn-blog"></i>Blog</a></li>
+			</ul>
+
+			<ul class="cf">
+				<li>Search</li>
+				<li>Post</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="clr">
+		<section class="profile">
+			<div>Image</div>
+			<div>Bio</div>
+			<div>Information</div>
+		</section>
+
+		<section>
+			<div class="comments">comments</div>
+			<div class="social">social</div>
+		</section>
+	</section>
+
+	<footer>
+		<p>Contact</p>
+	</footer>
 </body>
 </html>

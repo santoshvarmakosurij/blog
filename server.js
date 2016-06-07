@@ -13,6 +13,9 @@ var port = process.env.PORT || 3333;
 //db connection
 mongoose.connect('mongodb://santoshvarmakosurij:santoshvarmakosurij@ds021943.mlab.com:21943/santoshvarmakosurijblog');
 
+//using static files
+app.use(express.static(path.join(__dirname,'./site/resources')));
+
 //configure app
 app.set('views', path.join(__dirname, './site/views'));
 app.set('view engine', 'ejs');
