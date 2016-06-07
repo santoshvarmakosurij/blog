@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
+var mongoose = require('mongoose');
 
 //custom modules
 var router = require('./app_modules/routing.js');
@@ -9,6 +10,8 @@ var router = require('./app_modules/routing.js');
 var app = express();
 var port = process.env.PORT || 3333;
 
+//db connection
+mongoose.connect('mongodb://santoshvarmakosurij:santoshvarmakosurij@ds021943.mlab.com:21943/santoshvarmakosurijblog');
 
 //configure app
 app.set('views', path.join(__dirname, './site/views'));

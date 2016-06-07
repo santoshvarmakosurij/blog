@@ -14,6 +14,7 @@
   "dependencies": {
     "express": "4.13.x",
     "ejs": "2.4.x",
-    "body-parser": "1.15.x"
+    "body-parser": "1.15.x",
+    "mongoose": "4.4.x"
   }
 }
