@@ -65,8 +65,8 @@ table {
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -88,30 +88,29 @@ a {
 
 i.icn {
 	font-family: "FontAwesome";
+    font-size: 1.4em;
 }
 
 i.icn-link {
 	display: inline-block;
-	position: relative;
-	top: 2px;
 	width: 15px;
 	height: 15px;
-	margin: 0px 5px;
+	margin: 0px 10px;
 }
 
-i.icn-home {
-	content: "\f044";
+i.icn-home:after {
+	content: "\f015";
 }
 
-i.icn-blog {
-	content: "\f044";
+i.icn-blog:after {
+	content: "\f02d";
 }
 
 /*** header section ***/
 header {
 	width: 96%;
-	height: 40px;
-	line-height: 40px;
+	height: 30px;
+	line-height: 30px;
 	padding: 1% 2%;
 	float: left;
 	color:whitesmoke;
@@ -145,4 +144,5 @@ header nav ul {
 
 header nav li {
 	float: left;
+	margin-right: 10px;
 }
