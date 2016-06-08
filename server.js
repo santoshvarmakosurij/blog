@@ -12,27 +12,40 @@ var app = express();
 var port = process.env.PORT || 3333;
 
 //db connection
-mongoose.connect('mongodb://santoshvarmakosurij:santoshvarmakosurij@ds021943.mlab.com:21943/santoshvarmakosurijblog');
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
+ 
+var mongodbUri = 'mongodb://santoshvarmakosurij:santoshvarmakosurij@ds011024.mlab.com:11024/santoshvarmakosurijblog';
 
-//favicon
-app.use(favicon(__dirname + '/site/resources/images/favicon.ico')); 
+mongoose.connect(mongodbUri, options);
+var conn = mongoose.connection;             
+ 
+conn.on('error', console.error.bind(console, 'connection error:'));  
+ 
+conn.once('open', function() {
+  // Wait for the database connection to establish, then start the app.
 
-//using static files
-app.use(express.static(path.join(__dirname,'/site/resources')));
+	//favicon
+	app.use(favicon(__dirname + '/site/resources/images/favicon.ico')); 
 
-//configure app
-app.set('views', path.join(__dirname, '/site/views'));
-app.set('view engine', 'ejs');
-app.set('view cache',false);
+	//using static files
+	app.use(express.static(path.join(__dirname,'/site/resources')));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+	//configure app
+	app.set('views', path.join(__dirname, '/site/views'));
+	app.set('view engine', 'ejs');
+	app.set('view cache',false);
 
-//use the router module
-app.use(router);
+	app.use(bodyParser.urlencoded({ extended: true }));
 
-var http = require('http').Server(app);
+	//use the router module
+	app.use(router);
 
-// start the server at localhost:9999
-http.listen(port, function(){
-  console.log('server is running at http://127.0.0.1:9999');
+	var http = require('http').Server(app);
+
+	// start the server at localhost:9999
+	http.listen(port, function(){
+	  console.log('server is running at http://127.0.0.1:9999');
+	});             
+
 });
